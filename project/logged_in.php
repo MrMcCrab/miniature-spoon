@@ -1,3 +1,5 @@
+
+<!--Show welcome message and redirect to index-->
 <?php
    include "session.php";
 ?>

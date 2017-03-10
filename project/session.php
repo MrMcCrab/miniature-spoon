@@ -1,3 +1,4 @@
+<!--start new session and check is session exists-->
 <?php
    include('connect.php');
    session_start();

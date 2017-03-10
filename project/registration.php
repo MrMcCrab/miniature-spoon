@@ -10,8 +10,16 @@ $pwd2 = $_POST["password2"];
 $email1 = $_POST["email1"];
 $email2 = $_POST["email2"];
 
+//Check if username is taken
+$query = mysqli_query($db, "select user_name FROM users where user_name = '$uname' ");
+$rows = mysqli_fetch_array($query, MYSQLI_ASSOC);
+if ($rows >= 1) {
+  echo "Username is taken";
+  header("refresh:2; url=register.php");
+  die();
+} else if
 //Check if passwords and emails match
-if ($pwd1 != $pwd2) {
+   ($pwd1 != $pwd2) {
   echo "Passwords do not match";
   header("refresh:2; url=register.php");
   die();
@@ -20,6 +28,7 @@ if ($pwd1 != $pwd2) {
   header("refresh:2; url=register.php");
   die();
 }else {
+  //Register new user
   $sql = "insert into users(user_name, user_pass, user_email)
     values ('$uname', '$pwd1', '$email1')";
   if ($db->query($sql) === TRUE) {
@@ -29,7 +38,7 @@ if ($pwd1 != $pwd2) {
   }
 }
 
-//Redirect to index if registration succesfull
+//Redirect to index after succesfull registration
 header("refresh:2; url=index.php");
 die();
 ?>
