@@ -35,6 +35,9 @@
         </div>
 
         <div class='col-md-3'>
+          <form class='' action='newThread.php' method='post'>
+            <input class='btn btn-info' type='submit' value='New thread'>
+          </form>
         </div>
 
         <div class='col-md-4'>
