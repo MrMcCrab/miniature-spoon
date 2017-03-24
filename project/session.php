@@ -1,6 +1,6 @@
 <!--start new session and check is session exists-->
 <?php
-   include('connect.php');
+   include "connect.php";
    session_start();
 
    $user_check = $_SESSION['login_user'];
@@ -12,6 +12,7 @@
    $login_session = $row['user_name'];
 
    if(!isset($_SESSION['login_user'])){
-      header("location:login.php");
+       //header("location:login.php");
+       echo "login.php";
    }
 ?>

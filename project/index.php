@@ -26,7 +26,8 @@
     <div class='container'>
       <?php
         session_start();
-        include ('header.php');
+        include "header.php";
+        include "connect.php";
       ?>
 
       <div class='row'>
