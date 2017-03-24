@@ -19,7 +19,7 @@
 
          $_SESSION['login_user'] = $l_username;
 
-         header("location: logged_in.php");
+         //header("location: logged_in.php");
       }else {
          $error = "Invalid username or password";
          echo $error;
