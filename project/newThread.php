@@ -1,3 +1,8 @@
+<?php
+  include 'connect.php';
+  include 'session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,19 +26,17 @@
   <body>
     <div class="container">
 
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
       </div>
 
       <?php
-        include 'connect.php';
-        include 'session.php';
 
         if(!isset($_SESSION['login_user'])){
           echo "You need to be logged it to create a new thread";
           header("refresh:2; url=index.php");
         }else{
           include 'header.php';
-          echo "<div class='col-md-8'>
+          echo "<div class='col-md-8 col-lg-8'>
                   <form action='postThread.php' method='post'>
 
                   <div class='form-group'>
@@ -50,7 +53,7 @@
                 </div>";
               }
        ?>
-       <div class="col-md-2">
+       <div class="col-md-2 col-lg-2">
        </div>
 
     </div>

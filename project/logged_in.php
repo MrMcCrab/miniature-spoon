@@ -3,7 +3,7 @@
 <?php
    include "session.php";
 ?>
-<html">
+<html>
 
    <head>
       <title>Logged in</title>

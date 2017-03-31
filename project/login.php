@@ -1,6 +1,7 @@
 <?php
+   session_start();
    include"connect.php";
-   include"session.php";
+   //include"session.php";
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -17,13 +18,15 @@
 
       if($count == 1) {
 
-         $_SESSION['login_user'] = $l_username;
+        $_SESSION['login_user'] = $l_username;
 
-         //header("location: logged_in.php");
+         header("location: logged_in.php");
       }else {
          $error = "Invalid username or password";
          echo $error;
          header("refresh:2; url=index.php");
       }
+   }else{
+     header ("refresh:1 url=index.php");
    }
 ?>

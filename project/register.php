@@ -1,4 +1,4 @@
-
+<?php include "header.php" ?>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="container">
-      <?php include "header.php" ?>
+
 
 <div class="row">
   <div class="col-md-4">

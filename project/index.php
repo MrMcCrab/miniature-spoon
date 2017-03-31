@@ -1,4 +1,8 @@
-
+<?php
+include "session.php";
+include "header.php";
+include "connect.php";
+ ?>
 
 <!DOCTYPE html>
 
@@ -24,11 +28,6 @@
   </head>
   <body>
     <div class='container'>
-      <?php
-        session_start();
-        include "header.php";
-        include "connect.php";
-      ?>
 
       <div class='row'>
         <div class='col-md-3'>
