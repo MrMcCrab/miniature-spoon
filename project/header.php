@@ -43,6 +43,50 @@
     </div>
 
     <div class="col-md-3">
+      <!--Hide login button if user is logged in-->
+      <?php if(!isset($_SESSION['login_user'])){
+          echo "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal'>Login</button>
+
+          <div id='myModal' class='modal fade' role='dialog'>
+            <div class='modal-dialog'>
+
+              <div class='modal-content'>
+                <div class='modal-header'>
+                  <h4><span class='glyphicon glyphicon-lock'></span> Login</h4>
+                </div>
+                <div class='modal-body'>
+                  <form class='' id='login_form' action='login.php' method='post'>
+                    <div class='form-group'>
+                      <input class='form-control' type='text' placeholder='Username' name='username'>
+                    </div>
+                    <div class='form-group'>
+                      <input class='form-control' type='password' placeholder='Password' name='password'>
+                    </div>
+                    <button type='submit' class='btn btn-success'>Login</button>
+                  </form>
+                </div>
+                <div class='modal-footer'>
+                  <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
+                </div>
+
+              </div>
+            </div>
+          </div>";
+      }else {
+        ?>
+          <div class='col-md-8 login_echo'>
+            <?php
+              echo "Logged in: " . $_SESSION['login_user'];
+             ?>
+          </div>
+            <?php
+              echo "
+              <div class='col-md-4 login_button'>
+                <form action='logout.php'>
+                  <input class='btn btn-info' type='submit' value='Logout'>
+                </form>
+              </div>";
+            }?>
     </div>
 
   </div>
