@@ -1,6 +1,7 @@
 <?php
   include 'connect.php';
   include 'session.php';
+  include 'header.php';
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,6 @@
           echo "You need to be logged it to create a new thread";
           header("refresh:2; url=index.php");
         }else{
-          include 'header.php';
           echo "<div class='col-md-8 col-lg-8'>
                   <form action='postThread.php' method='post'>
 
@@ -47,8 +47,10 @@
                     <textarea class='form-control' rows='6' name='message' placeholder='Messsage...'></textarea>
                   </div>
 
-                  <input class='btn btn-info' type='submit' value='Submit'>
+                  <input class='btn btn-info post-button' type='submit' value='Submit'>
 
+                  <form>
+                    <button class='btn btn-info post-button' formaction='/index.php'>Cancel</button>
                   </form>
                 </div>";
               }
