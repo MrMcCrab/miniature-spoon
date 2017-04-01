@@ -5,3 +5,34 @@ body{
 .login_button{
   padding-top: 5px;
 }
+
+.login-form{
+  display: inline;
+}
+
+.login_echo{
+  margin-top: 10px;
+}
+
+.post-button{
+  display: inline-table;;;
+}
+
+.thread{
+
+  background-color: lightgray;
+  padding: 10px;
+}
+
+.background{
+  background-color: darkgray;
+  padding: 2px;
+}
+
+.new-thread{
+  margin-top: 8px;
+}
+
+.page-header{
+  margin-top: 10px;
+}
