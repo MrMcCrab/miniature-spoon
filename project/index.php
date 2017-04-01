@@ -30,62 +30,24 @@ include "connect.php";
     <div class='container'>
 
       <div class='row'>
-        <div class='col-md-3'>
+        <div class='col-md-1'>
         </div>
 
-        <div class='col-md-3'>
-          <form class='' action='newThread.php' method='post'>
+        <div class='col-md-9'>
+
+          <?php
+            include 'getThreads.php';
+          ?>
+
+          <form class='new-thread' action='newThread.php' method='post'>
             <input class='btn btn-info' type='submit' value='New thread'>
           </form>
         </div>
 
-        <div class='col-md-4'>
-        </div>
+        <!--<div class='col-md-2'>
+        </div>-->
 
         <div class='col-md-2'>
-
-          <!--Hide login form is user is logged in-->
-          <?php if(!isset($_SESSION['login_user'])){
-              echo "<div class='login-form'>
-              <form class='' id='login_form' action='login.php' method='post'>
-                <div class='form-group'>
-                  <label class='sr-only' for='user'>Username</label><br>
-                  <input class='form-control' type='text' minlength='3' name='username' id='user' placeholder='Username'>
-                </div>
-
-                <div class='form-group'>
-                  <label class='sr-only' for='pass'>Password</label>
-                  <input class='form-control' type='password' minlength='3' name='password' id='pass' placeholder='Passsword'>
-                </div>
-              </form>
-
-              <div class='row'>
-                <div class='col-md-5'>
-                  <input class='btn btn-info' type='submit' value='Login' form='login_form'>
-                </div>
-                <div class='col-md-7'>
-                  <form action='register.php'>
-                    <div class='form-group'>
-                      <input class='btn btn-info' type='submit' value='Register'>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>";
-          }else {
-            ?>
-              <div class='col-md-12 login_echo'>
-                <?php
-                  echo "Logged in, " . $_SESSION['login_user'];
-                 ?>
-              </div>
-                <?php
-                  echo "<div class='col-md-12 login_button'>
-                    <form action='logout.php'>
-                      <input class='btn btn-info' type='submit' value='Logout'>
-                    </form>
-                  </div>";
-                }?>
 
         </div>
       </div>
