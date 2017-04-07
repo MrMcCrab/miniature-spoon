@@ -6,6 +6,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "forum";
+
 //$createDb = "create database if not exists 'forum'";
 $createTableUsers = "create table if not exists users(
   user_id int(8) auto_increment primary key,
@@ -19,6 +20,12 @@ $creteTableMessages = "create table if not exists messages(
   message_content varchar(512) not null,
   user_id int(8) not null
   )";
+$creteTableThreads = "create table if not exists threads(
+  thread_id varchar(8) primary key not null,
+  thread_title varchar(32) not null,
+  thread_content varchar(512) not null,
+  user_id int(8) not null
+  )";
 
 // Create connection
 $db = new mysqli($servername, $username, $password, $dbname);
@@ -28,12 +35,27 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
+//create database if it does not exist
+/*if ($db->query($createDb) === TRUE){
+  echo"";
+}else{
+  die("error creating database " . $db->connect_error);
+}*/
+
 //create users table if it does not exist
 if ($db->query($createTableUsers) === TRUE){
   echo"";
 }else{
   die("error creating users table " . $db->connect_error);
 }
+
+//create threads table if it does not exist
+if ($db->query($creteTableThreads) === TRUE){
+  echo"";
+}else{
+  die("error creating threads table " . $db->connect_error);
+}
+echo "";
 
 //create messages table if it does not exist
 if ($db->query($creteTableMessages) === TRUE){
