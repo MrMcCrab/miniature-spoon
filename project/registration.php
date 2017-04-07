@@ -1,4 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href='stylesheet.css' rel='stylesheet'>
+  </head>
 
+  <body>
 
 <!-- registration sript -->
 <?php
@@ -14,13 +21,13 @@ $email2 = $_POST["email2"];
 $query = mysqli_query($db, "select user_name FROM users where user_name = '$uname' ");
 $rows = mysqli_fetch_array($query, MYSQLI_ASSOC);
 if ($rows >= 1) {
-  echo "Username is taken";
+  echo "<div class='echo'>Username is taken</div>";
   header("refresh:2; url=register.php");
   die();
 } else if
 //Check if passwords and emails match
    ($pwd1 != $pwd2) {
-  echo "Passwords do not match";
+  echo "<div class='echo'>Passwords do not match</div>";
   header("refresh:2; url=register.php");
   die();
 }else if($email1 != $email2){
@@ -32,7 +39,7 @@ if ($rows >= 1) {
   $sql = "insert into users(user_name, user_pass, user_email)
     values ('$uname', '$pwd1', '$email1')";
   if ($db->query($sql) === TRUE) {
-     echo "You have succesfully registered";
+     echo "<div class='echo'>You have succesfully registered</div>";
      } else {
      echo $db->error;
   }
@@ -42,3 +49,6 @@ if ($rows >= 1) {
 header("refresh:2; url=index.php");
 die();
 ?>
+
+  </body>
+</html>
