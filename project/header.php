@@ -36,13 +36,10 @@
     <div class="col-md-3">
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-6">
     </div>
 
-    <div class="col-md-3">
-    </div>
-
-    <div class="col-md-3">
+    <div class="col-md-2">
       <!--Hide login button if user is logged in-->
       <?php if(!isset($_SESSION['login_user'])){
           echo "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal'>Login</button>
@@ -76,7 +73,7 @@
         ?>
           <div class='col-md-8 login_echo'>
             <?php
-              echo "Logged in: " . $_SESSION['login_user'];
+              echo "<div class='echo'>Logged in: </div>" . $_SESSION['login_user'];
              ?>
           </div>
             <?php
@@ -87,6 +84,20 @@
                 </form>
               </div>";
             }?>
+    </div>
+
+    <div class="col-md-1">
+      <?php if(!isset($_SESSION['login_user'])){
+        echo "
+        <div>
+          <form class='' action='register.php' method='post'>
+            <button class='btn btn-info' type='submit' >Register</button>
+          </form>
+        </div>";
+      }else{
+        echo "";
+      }
+      ?>
     </div>
 
   </div>
