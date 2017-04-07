@@ -42,12 +42,12 @@
 
       <div class="form-group">
         <label class="sr-only" for="pass">Password</label>
-        <input class="form-control" type='text' minlength="6" name="password1" id="pass" placeholder="Passsword" required>
+        <input class="form-control" type='password' minlength="6" name="password1" id="pass" placeholder="Passsword" required>
       </div>
 
       <div class="form-group">
         <label class="sr-only" for="pass">Password again</label>
-        <input class="form-control" type='text' minlength="6" name="password2" id="pass" placeholder="Passsword again" required>
+        <input class="form-control" type='password' minlength="6" name="password2" id="pass" placeholder="Passsword again" required>
       </div>
 
       <div class="form-group">
