@@ -4,13 +4,13 @@
    include "session.php";
 ?>
 <html>
-
+  <link href='stylesheet.css' rel='stylesheet'>
    <head>
       <title>Logged in</title>
    </head>
 
    <body>
-      <h1>Welcome <?php echo $login_session; ?></h1>
+      <div class='error'>Welcome <?php echo $login_session; ?></div>
    </body>
    <?php
    header("refresh:2; url=index.php");
