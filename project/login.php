@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href='stylesheet.css' rel='stylesheet'>
+  </head>
+
+<body>
+
 <?php
    session_start();
    include"connect.php";
@@ -22,7 +31,7 @@
 
          header("location: logged_in.php");
       }else {
-         $error = "Invalid username or password";
+         $error = "<div class='error'>Invalid username or password</div>";
          echo $error;
          header("refresh:2; url=index.php");
       }
@@ -30,3 +39,6 @@
      header ("refresh:1 url=index.php");
    }
 ?>
+
+  </body>
+</html>
