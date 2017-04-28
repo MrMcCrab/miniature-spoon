@@ -9,13 +9,13 @@ $dbname = "forum";
 
 //$createDb = "create database if not exists 'forum'";
 $createTableUsers = "create table if not exists users(
-  user_id int(8) auto_increment primary key,
+  user_id int(8) auto_increment primary key not null,
   user_name varchar(32) not null,
   user_pass varchar(255) not null,
   user_email varchar(64) not null
   )";
 $creteTableMessages = "create table if not exists messages(
-  message_id varchar(8) primary key not null,
+  message_id varchar(8) primary key,
   message_title varchar(32) not null,
   message_content varchar(512) not null,
   user_id int(8) not null
