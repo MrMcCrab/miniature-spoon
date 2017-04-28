@@ -7,7 +7,16 @@
   $sql = "select * from threads";
   $result = $db->query($sql);
 
-  if($result->num_rows > 0){
+
+  if ($result->num_rows === null) {
+    echo"
+    <div class='row'>
+      <div class='col-md-8'>
+        <p>Nothing found</p>
+      </div>
+    </div>";
+  }
+  else if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
       //echo $row["thread_title"] . $row["thread_starter"] . $row["thread_content"];
       echo"
@@ -28,12 +37,13 @@
               $row[thread_starter]
             </div>
 
-
+            
           </div>
         </div>
 
       </div>";
     }
+    }else {
+      echo "error";
   }
-
  ?>
