@@ -30,25 +30,20 @@ include "connect.php";
     <div class='container'>
 
       <div class='row'>
-        <div class='col-md-1'>
-        </div>
 
-        <div class='col-md-9'>
-
+        <div class='col-md-12'>
           <?php
             include 'getThreads.php';
           ?>
+        </div>
 
+      </div>
+
+      <div class='row'>
+        <div class='col-md-12'>
           <form class='new-thread' action='newThread.php' method='post'>
             <input class='btn btn-info' type='submit' value='New thread'>
           </form>
-        </div>
-
-        <!--<div class='col-md-2'>
-        </div>-->
-
-        <div class='col-md-2'>
-
         </div>
       </div>
 
