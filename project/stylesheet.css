@@ -42,3 +42,22 @@ body{
   margin-top: 15%;
   font-size: 15px;
 }
+
+.threadContainer{
+  background-color: #606060;
+}
+
+.threadId{
+  float: right;
+}
+.threadStarter{
+  float: left;
+}
+
+.threadContainer{
+  margin-top: 10px;
+}
+
+a{
+  color: lightblue;
+}
