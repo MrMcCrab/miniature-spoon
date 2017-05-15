@@ -24,8 +24,9 @@ if($result->num_rows > 0){
 if($result2->num_rows > 0){
   while ($row2 = $result2->fetch_assoc()) {
     echo "
-      <div class='col-md-2'>
-        $row2[user_id]
+      <div class='col-md-12'>
+      <hr>
+        $row2[user_name]
       </div>
       <div class='col-md-10'>
         $row2[message_content]

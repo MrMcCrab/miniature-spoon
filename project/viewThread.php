@@ -28,9 +28,34 @@ include "connect.php";
 
     <div class='container'>
       <div class='row'>
+
+
         <?php
         include 'getPosts.php';
+
+        if (isset($_SESSION['login_user'])) {
+          echo "
+                <div class='col-md-8 col-lg-8'>
+                  <form action='postComment.php' method='post'>
+
+                    <div class='form-group'>
+                      <textarea class='form-control' rows='6' name='reply'></textarea>
+                    </div>
+
+                    <input class='btn btn-info post-button' type='submit' value='Post reply'>
+
+                  </form>
+                </div>
+          ";
+        }else {
+          echo "
+                <div class='col-md-8'>
+
+                </div>
+          ";
+        }
         ?>
+
       </div>
     </div>
 

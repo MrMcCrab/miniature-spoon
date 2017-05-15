@@ -16,6 +16,8 @@
         <div class='row threadContainer'>
           <div class=col-md-12>
             <h4><a  href='viewThread.php?id=$row[thread_id]&title=$row[thread_title]'>$row[thread_title]</a></h4>
+            $row[thread_content]
+            <hr>
           </div>
 
           <div class='col-md-4'>
