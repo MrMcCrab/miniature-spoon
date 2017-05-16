@@ -1,6 +1,4 @@
 
-<link href='stylesheet.css' rel='stylesheet'>
-
 <?php
   include 'connect.php';
 

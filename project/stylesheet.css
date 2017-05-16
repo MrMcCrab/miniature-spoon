@@ -44,7 +44,7 @@ body{
 }
 
 .threadContainer{
-  background-color: #a1b0c9;
+  background-color: #7cb4bc;
 }
 
 .threadId{
@@ -60,4 +60,16 @@ body{
 
 a{
   color: lightblue;
+}
+
+.messageContainer{
+  background-color: #7cb4bc;
+  border-style: solid;
+  border-color: cyan;
+  border-radius: 5px;
+  padding-top: 8px;
+}
+
+.mainPageLink{
+  color: black;
 }
