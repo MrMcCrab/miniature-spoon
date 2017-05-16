@@ -34,12 +34,14 @@
   <div class="row">
 
     <div class="col-md-3">
+      <a href='index.php' class='mainPageLink'>Main page</a>
     </div>
 
     <div class="col-md-6">
     </div>
 
     <div class="col-md-2">
+
       <!--Hide login button if user is logged in-->
       <?php if(!isset($_SESSION['login_user'])){
           echo "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal'>Login</button>
@@ -103,7 +105,3 @@
   </div>
 
 </div>
-
-  </body>
-</div>
-</html>
