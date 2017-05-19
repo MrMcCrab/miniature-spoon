@@ -13,7 +13,9 @@ include "connect.php";
 
 $uname = $_POST["username"];
 $pwd1 = $_POST["password1"];
+$pwd1hash = password_hash($pwd1, PASSWORD_DEFAULT);
 $pwd2 = $_POST["password2"];
+
 $email1 = $_POST["email1"];
 $email2 = $_POST["email2"];
 
@@ -26,7 +28,7 @@ if ($rows >= 1) {
   die();
 } else if
 //Check if passwords and emails match
-   ($pwd1 != $pwd2) {
+   ($pwd1hash != password_verify($pwd2, $pwd1hash)) {
   echo "<div class='echo'>Passwords do not match</div>";
   header("refresh:2; url=register.php");
   die();
@@ -37,7 +39,7 @@ if ($rows >= 1) {
 }else {
   //Register new user
   $sql = "insert into users(user_name, user_pass, user_email)
-    values ('$uname', '$pwd1', '$email1')";
+    values ('$uname', '$pwd1hash', '$email1')";
   if ($db->query($sql) === TRUE) {
      echo "<div class='echo'>You have succesfully registered</div>";
      } else {
