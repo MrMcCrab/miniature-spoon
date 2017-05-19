@@ -33,18 +33,18 @@
 
   <div class="row">
 
-    <div class="col-md-3">
+    <div class="col-md-2">
       <a href='index.php' class='mainPageLink'>Main page</a>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-5">
 
       <!--Hide login button if user is logged in-->
       <?php if(!isset($_SESSION['login_user'])){
-          echo "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal'>Login</button>
+          echo "<button type='button' class='btn btn-info buttonLogin' data-toggle='modal' data-target='#myModal'>Login</button>
 
           <div id='myModal' class='modal fade' role='dialog'>
             <div class='modal-dialog'>
@@ -67,24 +67,32 @@
                 <div class='modal-footer'>
                   <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
                 </div>
-
               </div>
             </div>
           </div>";
+
       }else {
         ?>
-          <div class='col-md-8 login_echo'>
+                  <!-- Echo users login name -->
+          <div class='col-md-4 login_echo'>
             <?php
               echo "<div class='echo'>Logged in: </div>" . $_SESSION['login_user'];
              ?>
           </div>
             <?php
               echo "
-              <div class='col-md-4 login_button'>
+              <!-- Show Logout and Change password buttons -->
+              <div class='col-md-2 login_button'>
                 <form action='logout.php'>
                   <input class='btn btn-info' type='submit' value='Logout'>
                 </form>
-              </div>";
+              </div>
+              <div class='col-md-4 login_button'>
+                <form action='changePassword.php'>
+                  <input class='btn btn-info' type='submit' value='Change password'>
+                </form>
+              </div>
+              ";
             }?>
     </div>
 
