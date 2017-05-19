@@ -1,5 +1,7 @@
 <?php
 
+//Script used to fetch thread starting post and all comments
+
 $id = $_GET['id'];
 
 $sql = "select * from threads where thread_id = '$id'";
@@ -8,6 +10,7 @@ $result = $db->query($sql);
 $sql2 = "select * from messages where thread_id = '$id'";
 $result2 = $db->query($sql2);
 
+//Selects thread starting post from database
 if($result->num_rows > 0){
   while ($row = $result->fetch_assoc()) {
     echo "
@@ -32,6 +35,7 @@ if($result->num_rows > 0){
           ";
   }
 }
+//Selects all comments belonging to the first post and echoes them
 if($result2->num_rows > 0){
   while ($row2 = $result2->fetch_assoc()) {
     echo "

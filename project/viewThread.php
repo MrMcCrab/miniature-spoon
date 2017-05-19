@@ -1,3 +1,6 @@
+
+<!-- Shows user the message they posted -->
+
 <?php
 include "session.php";
 include "header.php";

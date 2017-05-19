@@ -1,4 +1,6 @@
 
+<!-- footer holds container div and body end tags to keep other files cleaner -->
+
 </div>
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

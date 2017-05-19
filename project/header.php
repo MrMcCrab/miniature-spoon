@@ -1,5 +1,5 @@
 
-
+<!-- Header contains bootstartp components and login, register and change password buttons -->
 <!DOCTYPE html>
 
 <html lang="en">

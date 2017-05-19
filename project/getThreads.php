@@ -5,7 +5,7 @@
   $sql = "select * from threads";
   $result = $db->query($sql);
 
-
+  // Selects and echoes all threads from databes to the index.php page
   if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
       //echo $row["thread_title"] . $row["thread_starter"] . $row["thread_content"];

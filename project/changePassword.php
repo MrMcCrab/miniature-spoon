@@ -1,3 +1,6 @@
+
+<!-- Page containing form used to change password -->
+
 <?php
 include 'session.php';
 include 'header.php';

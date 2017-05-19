@@ -1,13 +1,13 @@
 
 
-<!-- Server connection script -->
+<!-- Server connection details -->
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "forum";
 
-//$createDb = "create database if not exists 'forum'";
+//sql queries to create tables if they don't exist
 $createTableUsers = "create table if not exists users(
   user_id int(8) auto_increment primary key not null,
   user_name varchar(32) not null,
@@ -35,12 +35,6 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-//create database if it does not exist
-/*if ($db->query($createDb) === TRUE){
-  echo"";
-}else{
-  die("error creating database " . $db->connect_error);
-}*/
 
 //create users table if it does not exist
 if ($db->query($createTableUsers) === TRUE){

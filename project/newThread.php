@@ -8,7 +8,7 @@
       </div>
 
       <?php
-
+        //Echo error message if user is not logged in, else shows form to submit new thread
         if(!isset($_SESSION['login_user'])){
           echo "You need to be logged it to create a new thread";
           header("refresh:2; url=index.php");
