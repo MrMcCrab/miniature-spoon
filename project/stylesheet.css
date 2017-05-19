@@ -7,12 +7,17 @@ body{
   padding-top: 5px;
 }
 
+.buttonLogin{
+  float: right;
+}
+
 .login-form{
   display: inline;
 }
 
 .login_echo{
   margin-top: 10px;
+
 }
 
 .post-button{
