@@ -2,5 +2,4 @@
 
 This is a simpple php forum app. 
 
-To deploy this on your own computer run Xampp and start Apache and MySQL. Open phpmyadmin and create a database called forum, 
-then use CreateTables.sql to create the tables and testData.sql to insert some test data. 
+This app was created for PHP/SQL course for Laurea University of Applied Sciences. More info about the app can be found at the wiki. 
